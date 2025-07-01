@@ -1,4 +1,4 @@
-# social-hub-mern
+# mern-social-media
 
 A responsive social media platform with real-time interactions, built using the MERN stack, REST APIs, and live notifications with Socket.io.
 
