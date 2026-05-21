@@ -55,7 +55,6 @@ export const UserContextProvider = ({ children }) => {
       setIsAuth(true);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setIsAuth(false);
       setLoading(false);
     }

@@ -17,7 +17,6 @@ export const PostContextProvider = ({ children }) => {
       setReels(data.reels);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   }

@@ -27,12 +27,9 @@ const UserAccount = ({ user: loggedInUser }) => {
       setUser(data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   }
-
-  console.log(user);
 
   useEffect(() => {
     fetchUser();
@@ -54,17 +51,11 @@ const UserAccount = ({ user: loggedInUser }) => {
   const [index, setIndex] = useState(0);
 
   const prevReel = () => {
-    if (index === 0) {
-      console.log("null");
-      return null;
-    }
+    if (index === 0) return null;
     setIndex(index - 1);
   };
   const nextReel = () => {
-    if (index === myReels.length - 1) {
-      console.log("null");
-      return null;
-    }
+    if (index === myReels.length - 1) return null;
     setIndex(index + 1);
   };
 
@@ -96,7 +87,7 @@ const UserAccount = ({ user: loggedInUser }) => {
       setFollowersData(data.followers);
       setFollowingsData(data.followings);
     } catch (error) {
-      console.log(error);
+      // follow data fetch failed silently
     }
   }
 

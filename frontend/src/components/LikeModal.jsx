@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { LoadingAnimation } from "./Loading";
 
 const LikeModal = ({ isOpen, onClose, id }) => {
   if (!isOpen) return null;
   const [value, setValue] = useState([]);
 
-  const [loading, setLoading] = true;
+  const [loading, setLoading] = useState(false);
 
   async function fetchLikes() {
     try {
@@ -15,7 +16,6 @@ const LikeModal = ({ isOpen, onClose, id }) => {
       setValue(data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   }
@@ -42,7 +42,7 @@ const LikeModal = ({ isOpen, onClose, id }) => {
                     className="bg-gray-500 py-2 px-3 text-white text-center rounded-md flex justify-center items-center gap-4"
                     to={`/user/${e._id}`}
                     key={i}
-                    onClick={() => setShow(false)}
+                    onClick={onClose}
                   >
                     {i + 1}{" "}
                     <img

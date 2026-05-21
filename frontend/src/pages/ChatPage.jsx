@@ -20,7 +20,7 @@ const ChatPage = ({ user }) => {
 
       setUsers(data);
     } catch (error) {
-      console.log(error);
+      // search failed
     }
   }
 
@@ -29,7 +29,7 @@ const ChatPage = ({ user }) => {
       const { data } = await axios.get("/api/messages/chats");
       setChats(data);
     } catch (error) {
-      console.log(error);
+      // chats fetch failed
     }
   };
 

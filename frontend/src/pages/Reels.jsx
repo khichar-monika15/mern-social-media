@@ -10,17 +10,11 @@ const Reels = () => {
   const [index, setIndex] = useState(0);
 
   const prevReel = () => {
-    if (index === 0) {
-      console.log("null");
-      return null;
-    }
+    if (index === 0) return null;
     setIndex(index - 1);
   };
   const nextReel = () => {
-    if (index === reels.length - 1) {
-      console.log("null");
-      return null;
-    }
+    if (index === reels.length - 1) return null;
     setIndex(index + 1);
   };
   return (
